@@ -1,0 +1,23 @@
+     body {
+         font-family: 'Sriracha', cursive;
+     }
+     
+     h1 {
+         color: blue;
+     }
+     
+     p {
+         margin: -10px 0 0px 0px;
+     }
+     
+     strong {
+         background-color: chartreuse;
+     }
+     
+     #it {
+         background-color: cornsilk;
+     }
+     
+     .bg-yellow {
+         background-color: yellow;
+     }
