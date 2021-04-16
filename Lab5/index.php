@@ -3,11 +3,10 @@
 include "./conDB.php";
 $strSQL = "SELECT * FROM tb_member";
 
-try{
+try {
     $result = $conn->query($strSQL);
     $rows = $result->fetch_array();
-}
-catch (Exception $e){
+} catch (Exception $e) {
     echo $e->getMessage();
 }
 
@@ -17,42 +16,45 @@ catch (Exception $e){
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-        <h1>รายชื่อสมาชิก</h1>
 
-        <table>
-<thead>
-<th>ลำดับ</th>
-<th>ชื่อ - สกุล</th>
-<th>ปีเกิด</th>
-<th>อายุ</th>
-</thead>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>รายชื่อสมาชิก</h1>
+
+    <table>
+        <thead>
+            <th>ลำดับ</th>
+            <th>ชื่อ - สกุล</th>
+            <th>ปีเกิด</th>
+            <!-- <th>อายุ</th> -->
+        </thead>
+        <tbody>
+            <?php
+            $i = 1;
+            while ($rows = $result->fetch_array()) {
+            ?>
+                <tr>
+                    <td><?= $i++ ?></td>
+                    <td><?= $rows[0] . $rows[1] ?></td>
+                    <td><?= $rows[2] ?></td>
+                    <!-- <td><?= date("y") - $rows[2] ?></td> -->
+                    <td><a href="add.php?id=<?=$rows[0]?>">ADD</a></td>
+                </tr>
+            <?php
+            }
+            ?>
+        </tbody>
+    </table>
+</body>
+
 <tbody>
-    <?php
-    $i = 1;
-    while ($rows = $result -> fetch_array()){
-     ?>
-     <tr>
-         <td><?=$i++?></td>
-         <td><?=$rows[0] $rows[1]?></td>
-         <td><?=$rows[2]?></td>
-         <td><?=date("y") - $rows[2]?></td>
-         <td></td>
-     </tr>
-  <?php
-    }
-    ?>      
+    <tr></tr>
 </tbody>
-</table>
-    </body>
 
-    <tbody>
-<tr></tr>
-    </tbody>
 </html>

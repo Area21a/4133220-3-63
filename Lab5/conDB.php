@@ -3,10 +3,10 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$host = "sql310.byethost14.com";
-$user = "b14_28370754";
-$pass = "";
-$db= "b14_28370754_member";
+$host = "sql206.byethost7.com";
+$user = "b7_28370874";
+$pass = "0959124464";
+$db= "b7_28370874_member";
 
 try{
     $conn = new mysqli($host,$user,$pass,$db);
