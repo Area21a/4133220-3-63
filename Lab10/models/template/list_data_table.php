@@ -24,7 +24,7 @@ try {
         ?>
         <tr>
             <td><?=$row["member_id"]?></td>
-            <td><?=$row["member_name"]. " " . $row["member_surname"]?></td>
+            <td><?=$row["member_name"]."".$row["member_surname"]?></td>
             <td><?=$row["member_dob"]?></td>
         </tr>
         <?php
